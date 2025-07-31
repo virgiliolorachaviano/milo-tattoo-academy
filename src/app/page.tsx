@@ -2,7 +2,8 @@ import Header from '../components/Header';
 import ModuleCard from '../components/ModuleCard';
 import CulturalTimeline from '../components/CulturalTimeline';
 import VideoPlayer from '../components/VideoPlayer';
-import ProgressBar from '../components/ProgressBar';
+// import ProgressIndicator from ../co'../components/ProgressIndicator';
+import ProgressIndicator from '../components/ProgressIndicator';
 
 const modules = [
   {
@@ -42,7 +43,7 @@ export default function Page() {
           <VideoPlayer src="/videos/introduccion.mp4" />
         </section>
         <section id="progress" className="mt-12">
-          <ProgressBar progress={33} />
+   <ProgressIndicator progress={33} />
         </section>
       </main>
     </>
