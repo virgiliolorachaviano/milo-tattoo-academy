@@ -1,11 +1,16 @@
 "use client";
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
-  const navItems = [
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+export default function Header(): ReactNode {
+  const [open, setOpen] = useState<boolean>(false);
+  const navItems: NavItem[] = [
     { name: 'Inicio', href: '/' },
     { name: 'Módulos', href: '#modules' },
     { name: 'Historia', href: '#history' },
@@ -31,7 +36,7 @@ export default function Header() {
           className={`${open ? 'block' : 'hidden'} md:flex space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0`}
         >
           {navItems.map((item) => (
-            <li key={item.name} className="text-lg hover:underline">
+            <li key={item.name} className="nav-link">
               <Link href={item.href} onClick={() => setOpen(false)}>
                 {item.name}
               </Link>

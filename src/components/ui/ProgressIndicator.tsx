@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, ReactNode } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
 interface ProgressIndicatorProps {
   progress: number;
 }
 
-export default function ProgressIndicator({ progress }: ProgressIndicatorProps) {
+export default function ProgressIndicator({ progress }: ProgressIndicatorProps): ReactNode {
   const controls = useAnimation();
 
   useEffect(() => {

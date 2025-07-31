@@ -1,11 +1,13 @@
-import Header from '../components/Header';
-import ModuleCard from '../components/ModuleCard';
-import CulturalTimeline from '../components/CulturalTimeline';
-import VideoPlayer from '../components/VideoPlayer';
-// import ProgressIndicator from ../co'../components/ProgressIndicator';
-import ProgressIndicator from '../components/ProgressIndicator';
+import { Header } from '../components/layout';
+import { ModuleCard, CulturalTimeline, VideoPlayer, ProgressIndicator } from '../components/ui';
+import { ReactNode } from 'react';
 
-const modules = [
+interface Module {
+  title: string;
+  description: string;
+}
+
+const modules: Module[] = [
   {
     title: 'Bitácora Personal',
     description: 'Lleva un registro de tu aprendizaje y progreso.',
@@ -20,7 +22,7 @@ const modules = [
   },
 ];
 
-export default function Page() {
+export default function Page(): ReactNode {
   return (
     <>
       <Header />
