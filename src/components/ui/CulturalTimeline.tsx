@@ -1,7 +1,15 @@
-import { motion } from 'framer-motion';
+'use client';
 
-export default function CulturalTimeline() {
-  const events = [
+import { motion } from 'framer-motion';
+import { ReactNode } from 'react';
+
+interface TimelineEvent {
+  year: string;
+  text: string;
+}
+
+export default function CulturalTimeline(): ReactNode {
+  const events: TimelineEvent[] = [
     { year: '3000 A.C.', text: 'Primeros tatuajes en momias egipcias.' },
     { year: '700', text: 'Polinesios perfeccionan el tatuaje tribal.' },
     { year: '1700', text: 'El tatuaje llega a Occidente a través de exploradores.' },
@@ -18,7 +26,7 @@ export default function CulturalTimeline() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow"
+            className="timeline-item"
           >
             <div className="font-bold mb-1">{year}</div>
             <p>{text}</p>
